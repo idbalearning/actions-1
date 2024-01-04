@@ -15,7 +15,7 @@ jobs:
         
         - name: Generate ASCII output
           run: |
-                sudo apt install cowsay -y
+                sudo apt-get install cowsay -y
                 cowsay -f dragon "Run for Cover, I am a Dragion,,,,,,RAWR" >> dragon.txt
                 grep -i "dragon" dragon.txt
                 cat dragon.txt
