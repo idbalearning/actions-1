@@ -9,6 +9,8 @@ jobs:
 
         - name: checkout Repo files
           run:  ls -lrst
-          
+
         - name: Executing the Shell Script
-          run: ./ascii-script.sh
+          run: |
+                chmod 777 ascii-scripts.sh
+                ./ascii-scripts.sh
