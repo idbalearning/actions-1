@@ -1,0 +1,14 @@
+name: Generate ASCII Art Work
+on: push
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: checkout Repo files
+          run:  ls -lrst
+          
+        - name: Executing the Shell Script
+          run: ./ascii-script.sh
