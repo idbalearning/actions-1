@@ -17,7 +17,7 @@ jobs:
           run: |
                 sudo apt install cowsay -y
                 cowsay -f dragon "Run for Cover, I am a Dragion,,,,,,RAWR" >> dragon.txt
-                grep -i dragon dragon.txt
+                grep -i "dragon" dragon.txt
                 cat dragon.txt
 
         # - name: List the Files
