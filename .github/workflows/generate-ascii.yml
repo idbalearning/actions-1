@@ -1,0 +1,27 @@
+name: Generate ASCII Art Work
+on: push
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: List and read Files
+          run: |
+               echo "This is my GitHub"
+               ls -ltra
+               cat README.md
+        
+        - name: Generate ASCII output
+          run: |
+                sudo apt install cowsay -y
+                cowsay -f dragon "Run for Cover, I am a Dragion,,,,,,RAWR" >> dragon.txt
+                grep -i dragon dragon.txt
+                cat dragon.txt
+
+        # - name: List the Files
+        #   run: ls
+
+        # - name: read the file
+        #   run:  cat README.md
