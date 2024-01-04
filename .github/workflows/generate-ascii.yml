@@ -7,21 +7,17 @@ jobs:
         - name: Checkout repo
           uses: actions/checkout@v4
 
-        - name: List and read Files
-          run: |
-               echo "This is my GitHub"
-               ls -ltra
-               cat README.md
+        - name: Install Cowsay Program
+          run: sudo apt-get install cowsay -y
         
-        - name: Generate ASCII output
-          run: |
-                sudo apt-get install cowsay -y
-                cowsay -f dragon "Run for Cover, I am a Dragion,,,,,,RAWR" >> dragon.txt
-                grep -i "dragon" dragon.txt
-                cat dragon.txt
+        - name: Gexecute Sowsay CMD
+          run: cowsay -f dragon "Run for Cover, I am a Dragion,,,,,,RAWR" >> dragon.txt
+          
+        - name: Test File Exists
+          run: grep -i "dragon" dragon.txt
 
-        # - name: List the Files
-        #   run: ls
+        - name: Read File
+          run: cat dragon.txt
 
-        # - name: read the file
-        #   run:  cat README.md
+        - name: checkout Repo files
+          run:  ls -lrst
