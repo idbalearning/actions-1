@@ -12,6 +12,7 @@ jobs:
 
         - name: Executing the Shell Script
           run: |
-                sh ascii-script.sh
+                chmod +x ascii-script.sh
+                ./ascii-script.sh
         - name: checkout Repo files
           run:  ls -lrsta
